@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sonali ❤️</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #4a4a4a;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            max-width: 500px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            transition: all 0.5s ease;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ff4d6d;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: #ff758f;
+            font-weight: 300;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .heart-box {
+            position: relative;
+            height: 100px;
+            margin-bottom: 30px;
+        }
+
+        .heart {
+            background-color: #ff4d6d;
+            display: inline-block;
+            height: 50px;
+            position: relative;
+            top: 0;
+            transform: rotate(-45deg);
+            width: 50px;
+            animation: pulse 1.2s infinite;
+        }
+
+        .heart:before, .heart:after {
+            content: "";
+            background-color: #ff4d6d;
+            border-radius: 50%;
+            height: 50px;
+            position: absolute;
+            width: 50px;
+        }
+
+        .heart:before {
+            top: -25px;
+            left: 0;
+        }
+
+        .heart:after {
+            top: 0;
+            left: 25px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1) rotate(-45deg); }
+            50% { transform: scale(1.15) rotate(-45deg); }
+            100% { transform: scale(1) rotate(-45deg); }
+        }
+
+        .btn {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Georgia', serif;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff758f;
+            transform: translateY(-2px);
+        }
+
+        /* Hidden Letter Content */
+        .letter {
+            display: none;
+            text-align: left;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: #333;
+            margin-top: 20px;
+            animation: fadeIn 1.5s ease forwards;
+        }
+
+        .letter p {
+            margin-bottom: 15px;
+        }
+
+        .signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 25px;
+            color: #ff4d6d;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="card">
+        <h1 id="main-title">Dearest Sonali,</h1>
+        <h2 id="subtitle">I am so incredibly sorry...</h2>
+        
+        <div class="heart-box">
+            <div class="heart"></div>
+        </div>
+
+        <button class="btn" id="open-btn" onclick="revealLetter()">Please Open This</button>
+
+        <div class="letter" id="secret-letter">
+            <p>Hey Sonali,</p>
+            <p>I hate knowing that I am the reason behind your hurt. Seeing you upset, or even realizing that my words or actions caused a shadow over your beautiful smile, completely breaks my heart.</p>
+            <p>You mean the absolute world to me. Your happiness is everything, and it kills me inside to know I failed to protect it. I was wrong, and I take full responsibility for hurting you.</p>
+            <p>Please forgive me. I promise to listen better, understand deeper, and love you more mindfully every single day. I never want to make you feel this way again.</p>
+            <p>I love you, more than words can ever say. Can we please make things right?</p>
+            <div class="signature">Forever Yours, ❤️</div>
+        </div>
+    </div>
+
+    <script>
+        function revealLetter() {
+            // Hide the button and subtitle smoothly
+            document.getElementById('open-btn').style.display = 'none';
+            document.getElementById('subtitle').style.display = 'none';
+            
+            // Change title
+            document.getElementById('main-title').innerHTML = "For You, Sonali";
+            
+            // Show the letter
+            const letter = document.getElementById('secret-letter');
+            letter.style.display = 'block';
+            
+            // Expand container max-width dynamically for readability
+            document.getElementById('card').style.maxWidth = '600px';
+        }
+    </script>
+</body>
+</html>
